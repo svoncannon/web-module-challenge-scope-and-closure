@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter1 has the variable inside the function and counter2 has the variable before the function
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * closure2 uses a closure because it is refrences a variable outside of the function
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *counter1 would be good if you dont want to use the variable count outside of the function and counter2 would be better if you want to be able to reference that variable later
 */
 
 // counter1 code
@@ -56,11 +56,14 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(game){
+  let score =Math.floor(Math.random(game) * 3)
+  
+  return score
+    
+  }
 
-    /*Code Here*/
-
-}
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,12 +79,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(round, num){
+  console.log(inning(1))
+  let final = {"Home": 0, "Away": 0,};
+  for (i = 0; i < num; i++){
+    final.Home += round();
+    final.Away += round();
+  }
+  return final
+  };
+  console.log(finalScore(inning, 9))    
 
-  /*Code Here*/
+//for (i = 0; i < num.length; i++){
+ 
+//}
 
-}
-
+//console.log(finalScore(inning (points), 5));
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
@@ -103,8 +116,37 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(round, num) {
+  
+  let scores = {
+    "Home": 0,
+    "Away": 0,
+  }
+  for(i = 0; i < num; i++){
+  scores.Home += round();
+  scores.Away += round();
+
+  console.log (`${i+1} inning: ${scores.Home} - ${scores.Away}`)
+  
+  } 
+} 
+
+scoreboard(inning,9)
+
+
+
+function personalDice(name){
+  return function(){
+      // generate random number between 1 and 6
+    const newRoll = Math.floor(Math.random() * 6);
+    console.log(`${name} rolled a ${newRoll}`)
+  }
 }
 
+const dansRoll = personalDice("Dan");
 
+const zoesRoll = personalDice("Zoe");
+
+
+dansRoll();
+dansRoll();
