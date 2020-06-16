@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+        {Closures are not really any different than the regular {} you just use them as a closure when pulling variables from outside the function}
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+      there isnt a closure because all the variables are inside the function
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+
+        Almost always different numbers Not sure what could change not entirely sure what this question is asking me
+
+c. What is the lexical scope of `newRoll`?  
+
+        innerfunction scope
 
 ### Task 2c - Exit Ticket
 
